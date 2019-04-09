@@ -118,6 +118,13 @@ public class Feature extends BaseModel {
 	private String sProjectName;
 	@Indexed
 	private String sProjectID;
+	
+	/*
+	 * Defect Data
+	 */
+	private String isDefect;
+	private String priority;
+	
 
 
 	private Collection<FeatureIssueLink> issueLinks = new ArrayList<>();
@@ -553,5 +560,21 @@ public class Feature extends BaseModel {
 	@Override
 	public int hashCode() {
 		return new HashCodeBuilder(17, 37).append(collectorId).append(sId).toHashCode();
+	}
+
+	public String getIsDefect() {
+		return isDefect;
+	}
+
+	public void setIsDefect(String isDefect) {
+		this.isDefect = isDefect;
+	}
+
+	public String getPriority() {
+		return priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
 	}
 }
